@@ -60,11 +60,16 @@ while True:
         while True:
             lis=[]
             st=input('请输入要输出大学的数量和年份以，分隔：\n')
+            #判断输入的数字是不是复数
+            if 'j' in st:
+                flag=False
+            else:
+                flag=True
             #分割st字符串
-            if ',' in st:
+            if ',' in st and flag==True:
                 lis=st.split(',')
                 flag=True
-            elif '，' in st:
+            elif '，' in st and flag==True:
                 lis=st.split('，')
                 flag=True
             else:
@@ -78,7 +83,6 @@ while True:
                     else:
                         break
                 #若用户输入超过两个数字则要求重新输入
-
                 if len(lis)==2:
                     flag=True
                 else:
